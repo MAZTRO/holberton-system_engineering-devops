@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 .TH man 2 "04 May 2015" "0.32" "Holberton man page"
-=======
-.TH man 2 "04 May 2015" "0.32" "Holberon man page"
->>>>>>> ba73d2c2cb27244062f1ff0a6e81e8577f949c75
 .SH NAME
 .B holberton
 - become a full-stack software engineer.
