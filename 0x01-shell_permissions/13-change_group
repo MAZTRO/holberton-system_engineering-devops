@@ -1,2 +1,2 @@
 #!/bim/bash
-chown :holberton hello
+chown holberton hello
