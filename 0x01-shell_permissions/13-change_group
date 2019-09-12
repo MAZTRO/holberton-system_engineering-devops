@@ -1,0 +1,2 @@
+#!/bim/bash
+chgrp holberton hello
