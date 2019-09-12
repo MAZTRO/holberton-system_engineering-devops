@@ -1,2 +1,2 @@
 #!/bim/bash
-chgrp holberton hello
+chown :holberton hello
