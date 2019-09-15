@@ -1,6 +1,1 @@
-#!/bin/bash
-<<<<<<< HEAD
-awk 'NR==3' iacta
-=======
-cat iacta|awk 'NR==3'
->>>>>>> 3c36fda39fdaf9b36b27a228033403d2bc189f9b
+sdfksdfjiasdg
