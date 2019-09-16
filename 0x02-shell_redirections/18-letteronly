@@ -1,2 +1,2 @@
 #!/bin/bash
-grep --exclude=[[alnum]] /etc/ssh/sshd_config
+find | grep '^\./ABC' /etc/ssh/sshd_config
