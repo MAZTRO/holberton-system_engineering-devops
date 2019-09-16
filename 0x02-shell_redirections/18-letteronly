@@ -1,2 +1,2 @@
 #!/bin/bash
-grep ABC* /etc/ssh/sshd_config
+grep “[^0-9]” /etc/ssh/sshd_config
