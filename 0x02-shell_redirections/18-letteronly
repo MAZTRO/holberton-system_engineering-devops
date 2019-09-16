@@ -1,2 +1,2 @@
 #!/bin/bash
-find | grep '^\./ABC' /etc/ssh/sshd_config
+tree | grep ABC /etc/ssh/sshd_config
