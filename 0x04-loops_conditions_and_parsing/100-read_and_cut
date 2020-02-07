@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Script that displays numbers from 1 to 100.
+f_pass_wd="/etc/passwd"
+while IFS=: read -r line_a line_b
+do
+    printf '%s%s\n' "$line_a" "$( echo "$line_b" | cut -d ":" -f 2,5 )"
+done < "$f_pass_wd"
