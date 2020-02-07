@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script is displaying The content of the current directory.
+LIST="$(find . | cut -f2 -d'-' | head)"
+for doc in $LIST
+do
+    echo "$doc"
+done

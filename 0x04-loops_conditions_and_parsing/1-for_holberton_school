@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times with FOR loop.
+for str in {1..10}
+do
+	str="Holberton School"
+	echo "$str"
+done
