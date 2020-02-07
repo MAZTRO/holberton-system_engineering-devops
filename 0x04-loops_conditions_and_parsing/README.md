@@ -27,4 +27,4 @@ The advantage of #!/usr/bin/env bash is that it will use whatever bash executabl
  - The second line of all your Bash scripts should be a comment explaining what is the script doing.
 
 ## Authors:
-(Jonatan Mazo)[https://twitter.com/JonatanRMC]
+[Jonatan Mazo.](https://twitter.com/JonatanRMC)
