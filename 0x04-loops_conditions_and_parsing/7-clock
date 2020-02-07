@@ -2,7 +2,7 @@
 # This script is displaying "A clock" with WHILE loop.
 hour=0
 minutes=1
-while [[ $hour -lt 13 ]]
+while [[ $hour -lt 12 ]]
 do
     echo "Hour: $hour"
     while [[ $minutes -lt 60 ]]
