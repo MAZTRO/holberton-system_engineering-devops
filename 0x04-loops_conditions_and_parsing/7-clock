@@ -10,6 +10,6 @@ do
         echo "$minutes"
         let minutes+=1
     done
-    minutes=0
+    minutes=1
     let hour+=1
 done
