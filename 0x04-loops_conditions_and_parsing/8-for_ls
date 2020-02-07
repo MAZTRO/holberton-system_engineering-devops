@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This script is displaying The content of the current directory.
-LIST="$(find . | cut -f2 -d'-' | head)"
+LIST="$(ls)"
 for doc in $LIST
 do
-    echo "$doc"
+    echo "$doc" | cut -f2 -d "-"
 done
