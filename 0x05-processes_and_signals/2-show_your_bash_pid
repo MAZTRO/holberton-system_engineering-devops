@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#This scripts thart displays lines containing the bash word.
+ID="$(ps -aux)"
+awk 'BEGIN{IGNORECASE=1} /bash/{print $0}' id_process

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#This scripts is to show the self ID process
+ID="$(pgrep -f 0-what-is-my-pid)"
+echo "$ID"
