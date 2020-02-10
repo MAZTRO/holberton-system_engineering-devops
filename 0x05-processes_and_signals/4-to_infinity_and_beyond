@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#This scripts thart displays lines containing the bash word.
+#This scripts that do a infinite loop.
 count=0
 while [ $count -lt 10 ]
 do

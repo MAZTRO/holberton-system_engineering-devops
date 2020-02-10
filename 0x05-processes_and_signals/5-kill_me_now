@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#This scripts that kill the infinite loop.
+ID="$(pgrep -f 4-to_infinity_and_beyond)"
+kill $ID
