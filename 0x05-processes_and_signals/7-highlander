@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 #This scripts that do a infinite loop.
+thanos()
+{
+	echo "I am invincible!!!"
+}
+
 count=0
 while [ $count -lt 10 ]
 do
+	trap 'thanos' 15
     echo "To infinity and beyond"
 	sleep 2
 done

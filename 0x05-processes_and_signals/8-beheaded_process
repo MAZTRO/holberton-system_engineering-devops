@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#This scripts that kill a infinite loop.
+ID="$(pgrep -f 7-highlander)"
+kill -9 $ID

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#This scripts that kill the infinite loop without kill.
+pkill -f 7-highlander
