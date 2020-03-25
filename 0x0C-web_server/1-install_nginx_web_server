@@ -3,5 +3,8 @@
 
 sudo apt-get update
 sudo apt-get install nginx -y
-echo "Holberton School" > /var/www/html/index.nginx-debian.html
+sudo chgrp www-data /var/www/html
+sudo chmod -R 775 /var/www/html
+sudo chmod -R g+s /var/www/html
 sudo ufw allow 'Nginx FULL'
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
