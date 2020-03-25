@@ -10,9 +10,9 @@ echo "Holberton School" > /var/www/html/index.nginx-debian.html
 
 sudo chmod -R 777 /etc/nginx
 sudo chmod -R g+s /etc/nginx
-sudo sed -i "18 a \\\n\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-enabled/default
+sed -i "18 a \\\n\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-enabled/default
 
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/page_404.html
-sudo sed -i "35 a \\\n\terror_page 404 /page_404.html;\n\tlocation = /page_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}" /etc/nginx/sites-enabled/default
+sed -i '35 a \ \n\t error_page 404 /page_404.html; \n\t location = /page_404.html { \n\t\t root /usr/share/nginx/html; \n\t\t internal; \n\t}' /etc/nginx/sites-enabled/default
 
 sudo service nginx restart
