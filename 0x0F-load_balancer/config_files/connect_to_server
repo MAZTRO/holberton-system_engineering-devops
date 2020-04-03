@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Conect a server with a private Key
+#----------------------------------------------------------------------------
+# USAGE: ./connect_to_server <ip_address>
+#----------------------------------------------------------------------------
+
+if [ $# -lt 1 ]; then
+	echo "Usage: ./connect_to_server <ip_address>"
+else
+	ssh -i ~/.ssh/holberton ubuntu@"$1"
+fi
