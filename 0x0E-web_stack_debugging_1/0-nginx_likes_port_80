@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# test change a whole line
+sudo sed -i "/default_server;/c\ \tlisten 80 default_server;" /etc/nginx/sites-enabled/default
+sudo sed -i "/ipv6only=on;/c\ \tlisten [::]:80 default_server ipv6only=on;" /etc/nginx/sites-enabled/default
+sudo service nginx restart
