@@ -36,14 +36,9 @@ defaults
 frontend Local_Server
 	bind *:80
 	bind *:443 ssl crt /etc/ssl/www.jonatam.tech/www.jonatam.tech.pem
-
-	# Redirect if HTTPS is *not* used
 	redirect scheme https code 301 if !{ ssl_fc }
-
-	# test uri to see if its a letsencrypt request
 	acl letsencrypt-acl path_beg /.well-known/acme-challenge/
 	use_backend letsencrypt-backend if letsencrypt-acl
-
 	mode http
 	default_backend My_Web_Servers
 
