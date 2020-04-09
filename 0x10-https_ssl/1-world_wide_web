@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Bash script that will display information about subdomains.
+function printing () {
+    echo "$1" "$2" "$3" | awk '{msg = "The subdomain " $2 " is a " $3 " record and points to " $1; print msg}'
+}
+domain="$1"
+sub="$2"
+if [ $# -eq 1 ]; then
+    sub_domains="www lb-01 web-01 web-02"
+    for sub_dom in $sub_domains; do
+        URL=$sub_dom.$domain
+        ip="$(dig "$URL" +short)"
+        A_Record="$(dig "$URL" | grep -A1 'ANSWER SECTION:' | awk '{print $4}' | tr -d '\n')"
+        printing "$ip" "$sub_dom" "$A_Record"
+    done
+elif [ $# -eq 2 ]; then
+    URL="$sub"."$domain"
+    A_Record="$(dig "$URL" | grep -A1 'ANSWER SECTION:' | awk '{print $4}' | tr -d '\n')"
+    ip="$(dig "$URL" +short)"
+    printing "$ip" "$sub" "$A_Record"
+fi
