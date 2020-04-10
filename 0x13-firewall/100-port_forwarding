@@ -1,10 +1,3 @@
-##### forward port 8080 to port 80
-sudo ufw allow 8080/tcp
-sudo ufw allow 80/tcp
-sudo ufw allow 22/tcp
-sudo ufw allow 443/tcp
-
-echo '
 #
 # rules.before
 #
@@ -14,13 +7,11 @@ echo '
 #   ufw-before-output
 #   ufw-before-forward
 #
-
 *nat
 :PREROUTING ACCEPT [0:0]
 -A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
 COMMIT
-
-# Dont delete these required lines, otherwise there will be errors
+# Don't delete these required lines, otherwise there will be errors
 *filter
 :ufw-before-input - [0:0]
 :ufw-before-output - [0:0]
