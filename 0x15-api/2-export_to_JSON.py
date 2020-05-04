@@ -17,12 +17,12 @@ if __name__ == "__main__":
 
     with open(name_file, mode='w') as json_file:
         task_list = []
+        data = {}
         for relation in relations.json():
-            USER_ID = relation['userId']
             TASK_STATUS = relation['completed']
             TASK_TITLE = relation['title']
             task_list.append({"task": TASK_TITLE,
                              "completed": TASK_STATUS,
                              "username": name})
-        data = {relation['userId']: task_list}
+        data[users.json()['id']]: task_list
         json.dump(data, json_file)
