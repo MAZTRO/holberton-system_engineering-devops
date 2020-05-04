@@ -12,7 +12,7 @@ if __name__ == "__main__":
     uri = 'https://jsonplaceholder.typicode.com/'
     users = requests.get(uri + 'users/{}'.format(av[1]))
     name = users.json()['username']
-    name_file = str(users.json()['id']) + ".json"
+    name_file = av[1] + ".json"
     relations = requests.get(uri + 'users/{}/todos'.format(av[1]))
 
     with open(name_file, mode='w') as json_file:
