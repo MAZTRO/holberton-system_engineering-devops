@@ -15,12 +15,12 @@ if __name__ == "__main__":
     name_file = av[1] + ".json"
     relations = requests.get(uri + 'users/{}/todos'.format(av[1]))
 
+    task_list = []
+    data = {}
+    for relation in relations.json():
+        task_list.append({"task": relation.get('title'),
+                          "completed": relation.get('completed'),
+                          "username": name})
+    data[users.json()['id']] = task_list
     with open(name_file, mode='w') as json_file:
-        task_list = []
-        data = {}
-        for relation in relations.json():
-            task_list.append({"task": relation.get('title'),
-                             "completed": relation.get('completed'),
-                             "username": name})
-        data[users.json()['id']] = task_list
         json.dump(data, json_file)
