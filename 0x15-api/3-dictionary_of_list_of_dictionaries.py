@@ -18,7 +18,7 @@ if __name__ == "__main__":
     with open('todo_all_employees.json', mode='w') as json_file:
         for user in users.json():
             for todo in todos.json():
-                if user['id'] == todo['userId']:
+                if user['id'] == todo.get('userId'):
                     USER_NAME = user['username']
                     USER_ID = todo['userId']
                     TASK_STATUS = todo['completed']

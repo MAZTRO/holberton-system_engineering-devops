@@ -19,7 +19,7 @@ if __name__ == "__main__":
         task_list = []
         data = {}
         for relation in relations.json():
-            TASK_STATUS = relation['completed']
+            TASK_STATUS = relation.get('completed')
             TASK_TITLE = relation['title']
             task_list.append({"task": TASK_TITLE,
                              "completed": TASK_STATUS,
