@@ -4,12 +4,10 @@
     extend your Python script to export data in the JSON format,
     to all user.
 """
-from sys import argv
 import json
 import requests
 
 if __name__ == "__main__":
-    av = argv
     uri = 'https://jsonplaceholder.typicode.com/'
     users = requests.get(uri + 'users')
     todos = requests.get(uri + 'todos')
