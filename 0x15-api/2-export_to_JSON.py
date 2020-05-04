@@ -19,10 +19,8 @@ if __name__ == "__main__":
         task_list = []
         data = {}
         for relation in relations.json():
-            TASK_STATUS = relation.get('completed')
-            TASK_TITLE = relation['title']
-            task_list.append({"task": TASK_TITLE,
-                             "completed": TASK_STATUS,
+            task_list.append({"task": relation.get('title'),
+                             "completed": relation.get('completed'),
                              "username": name})
         data[users.json()['id']] = task_list
         json.dump(data, json_file)
