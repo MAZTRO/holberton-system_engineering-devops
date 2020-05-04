@@ -24,5 +24,5 @@ if __name__ == "__main__":
             task_list.append({"task": TASK_TITLE,
                              "completed": TASK_STATUS,
                              "username": name})
-        data[users.json()['id']]: task_list
+        data[users.json()['id']] = task_list
         json.dump(data, json_file)
