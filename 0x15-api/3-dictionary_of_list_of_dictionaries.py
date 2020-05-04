@@ -1,19 +1,25 @@
 #!/usr/bin/python3
-""" Python script to export data in the JSON format """
+"""returns all information about his/her todo list progress in json"""
 import json
 import requests
 
 if __name__ == "__main__":
-    uri = 'https://jsonplaceholder.typicode.com/'
-    users = requests.get(uri + 'users')
-    todos = requests.get(uri + 'todos')
-    data = {}
-    for user in users.json():
-        data[user.get('id')] = []
-        for td in todos.json():
-            if user.get('id') == td.get('userId'):
-                data[user.get('id')].append({"username": user.get('username'),
-                                            "task": td.get('title'),
-                                            "completed": td.get('completed')})
-    with open('todo_all_employees.json', mode='w') as json_file:
-        json.dump(data, json_file)
+    user = 'https://jsonplaceholder.typicode.com/users/'
+    r2 = 'https://jsonplaceholder.typicode.com/todos'
+    r_user = requests.get(user)
+    r2 = requests.get(r2)
+    data_user = r_user.json()
+    data_route2 = r2.json()
+    new = {}
+    for user in data_user:
+        new[user['id']] = []
+        for i in data_route2:
+            if i['userId'] == user['id']:
+                new[user['id']].append({
+                    'task': i['title'],
+                    'completed': i['completed'],
+                    'username': user['username']
+                    })
+    concat = 'todo_all_employees' + '.json'
+    with open(concat, mode='w') as data:
+        json.dump(new, data)
