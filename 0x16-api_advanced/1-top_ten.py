@@ -16,4 +16,8 @@ def top_ten(subreddit):
 
     response = requests.get(main_url + sub_reddit, headers=header)
 
-    print(response.json()['data']['children'][0]['data']['title'])
+    if ('error' in response.json().keys()):
+        print(None)
+    else:
+        for titles in response.json()['data']['children']:
+            print(titles['data']['title'])
