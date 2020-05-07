@@ -22,7 +22,6 @@ def count_words(subreddit, word_list, dict_words={}, after=""):
     if ('error' in response.json().keys()):
         return
 
-
     if (len(dict_words) == 0):
         dict_words = dict.fromkeys(word_list, 0)
     words = ''
@@ -30,7 +29,6 @@ def count_words(subreddit, word_list, dict_words={}, after=""):
     for titles in response.json()['data']['children']:
         words += titles['data']['title']
         list_word = words.split(' ')
-
 
     for word in list_word:
         for key, value in dict_words.items():
@@ -40,7 +38,9 @@ def count_words(subreddit, word_list, dict_words={}, after=""):
     after = response.json()['data']['after']
 
     if (after is None):
-        sort_dict = OrderedDict(sorted(dict_words.items(), key=lambda x: x[1], reverse=True))
+        sort_dict = OrderedDict(sorted(dict_words.items(),
+                                key=lambda x: x[1],
+                                reverse=True))
         for k, v in sort_dict.items():
             if v is not 0:
                 print("{}: {}".format(k, v))
