@@ -3,13 +3,13 @@
 function that queries the Reddit API and prints
 the titles of the first 10 hot posts listed for a given subreddit.
 """
-import operator
+from collections import OrderedDict
 import requests
 
 
 def count_words(subreddit, word_list, dict_words={}, after=""):
     main_url = 'https://www.reddit.com/'
-    sub_reddit = 'r/{}/hot.json?limit=100&after={}'.format(subreddit, after)
+    sub_reddit = 'r/{}/hot.json?after={}'.format(subreddit, after)
     header = {
         'User-Agent': 'MAZTRO',
         'From': 'youremail@domain.com'
@@ -40,6 +40,7 @@ def count_words(subreddit, word_list, dict_words={}, after=""):
     after = response.json()['data']['after']
 
     if (after is None):
+        sort_dict = OrderedDict(sorted(dict_words.items(), key=lambda x: x[1], reverse=True))
         for k, v in sort_dict.items():
             if v is not 0:
                 print("{}: {}".format(k, v))
