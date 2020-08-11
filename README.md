@@ -1,6 +1,6 @@
 # DevOps Repo
 <p align="center">
-    <img src="devops.png" alt="DevOps" height="300" width="700">
+    <img src="devops.png" alt="DevOps" height="350" width="700">
 </p>
 
 ## what did you'll find?
