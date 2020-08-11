@@ -1,2 +1,5 @@
 # 0x00 SHELL
-In this file i can try to put a file with script to manage shell.
+### Basic comands to use linux shell
+- ls, mkdir, cp ...
+
+and their variants.
